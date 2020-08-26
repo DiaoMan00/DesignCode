@@ -10,29 +10,38 @@ import SwiftUI
 
 struct HomeList: View {
     @State var show = false
-    let data = CourseData
+    let courses = CourseData
+    
     var body: some View {
         VStack {
-            VStack (){
-                Text("Course View")
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                Text("22 Course")
-                    .foregroundColor(.gray)
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Course View")
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                    Text("22 Course")
+                        .foregroundColor(.gray)
+                        .padding(.top, 20)
+                }
+                .padding(.leading, 36)
+                Spacer()
             }
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 30) {
-                    ForEach(data) { item in
-                        CourseView(title: item.title, image: item.image, color: item.color, shadowColor: item.shadowColor)
-                        .sheet(isPresented: self.$show, content: { ContentView() })
-                        .onTapGesture {
-                            self.show.toggle()
+                    ForEach(courses) { item in
+                        CourseView(title: item.title,
+                                   image: item.image,
+                                   color: item.color,
+                                   shadowColor: item.shadowColor)
+                            .sheet(isPresented: self.$show, content: { ContentView() })
+                            .onTapGesture {
+                                self.show.toggle()
                         }
                     }
                 }
                 .padding(.leading, 30)
-                .frame(height: UIScreen.main.bounds.height, alignment: .top)
+                .padding(.bottom, 100)
             }
             Spacer()
         }
@@ -42,6 +51,7 @@ struct HomeList: View {
 struct HomeList_Previews: PreviewProvider {
     static var previews: some View {
         HomeList()
+        
     }
 }
 

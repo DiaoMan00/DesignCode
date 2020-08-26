@@ -15,7 +15,7 @@
 		4A5DF61A24F50FE900C15B87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5DF61824F50FE900C15B87 /* LaunchScreen.storyboard */; };
 		4A5DF62224F510BB00C15B87 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF62124F510BB00C15B87 /* Home.swift */; };
 		4A5DF62424F517D600C15B87 /* HomeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF62324F517D600C15B87 /* HomeList.swift */; };
-		4A5DF62624F60F7900C15B87 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF62524F60F7900C15B87 /* BlurView.swift */; };
+		4A5DF62824F63C8B00C15B87 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF62724F63C8B00C15B87 /* BlurView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		4A5DF61B24F50FE900C15B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A5DF62124F510BB00C15B87 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		4A5DF62324F517D600C15B87 /* HomeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeList.swift; sourceTree = "<group>"; };
-		4A5DF62524F60F7900C15B87 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		4A5DF62724F63C8B00C15B87 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +62,7 @@
 		4A5DF60C24F50FE700C15B87 /* DesignCode */ = {
 			isa = PBXGroup;
 			children = (
+				4A5DF62724F63C8B00C15B87 /* BlurView.swift */,
 				4A5DF60D24F50FE700C15B87 /* AppDelegate.swift */,
 				4A5DF60F24F50FE700C15B87 /* SceneDelegate.swift */,
 				4A5DF61124F50FE700C15B87 /* ContentView.swift */,
@@ -71,7 +72,6 @@
 				4A5DF61524F50FE900C15B87 /* Preview Content */,
 				4A5DF62124F510BB00C15B87 /* Home.swift */,
 				4A5DF62324F517D600C15B87 /* HomeList.swift */,
-				4A5DF62524F60F7900C15B87 /* BlurView.swift */,
 			);
 			path = DesignCode;
 			sourceTree = "<group>";
@@ -160,7 +160,7 @@
 				4A5DF61024F50FE700C15B87 /* SceneDelegate.swift in Sources */,
 				4A5DF62224F510BB00C15B87 /* Home.swift in Sources */,
 				4A5DF61224F50FE700C15B87 /* ContentView.swift in Sources */,
-				4A5DF62624F60F7900C15B87 /* BlurView.swift in Sources */,
+				4A5DF62824F63C8B00C15B87 /* BlurView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
