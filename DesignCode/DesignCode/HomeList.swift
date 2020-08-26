@@ -9,18 +9,33 @@
 import SwiftUI
 
 struct HomeList: View {
+    @State var show = false
+    let data = CourseData
     var body: some View {
         VStack {
-            Text("Build an app!")
-                .font(.title)
-                .fontWeight(.medium)
-                .foregroundColor(.black)
-            Image("swiftUI_test_2")
-            .cornerRadius(20)
-            .shadow(radius: 20)
+            VStack (){
+                Text("Course View")
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                Text("22 Course")
+                    .foregroundColor(.gray)
+            }
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 30) {
+                    ForEach(data) { item in
+                        CourseView(title: item.title, image: item.image, color: item.color, shadowColor: item.shadowColor)
+                        .sheet(isPresented: self.$show, content: { ContentView() })
+                        .onTapGesture {
+                            self.show.toggle()
+                        }
+                    }
+                }
+                .padding(.leading, 30)
+                .frame(height: UIScreen.main.bounds.height, alignment: .top)
+            }
             Spacer()
         }
-        .padding(.top, 40)
     }
 }
 
@@ -29,3 +44,52 @@ struct HomeList_Previews: PreviewProvider {
         HomeList()
     }
 }
+
+struct CourseView: View {
+    var title: String = ""
+    var image: String = ""
+    var color: Color = Color.white
+    var shadowColor: Color = Color.gray
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(title)
+                .foregroundColor(.white)
+                .font(.title)
+                .fontWeight(.medium)
+                .padding(20)
+                .lineLimit(3)
+                .frame(width: 150)
+            Spacer()
+            Image(image)
+                .renderingMode(.original)
+        }
+        .background(color)
+        .cornerRadius(30)
+        .frame(width: 246, height: 360)
+        .shadow(color: shadowColor, radius: 20, x: 0, y: 20)
+    }
+}
+
+struct Course: Identifiable {
+    var id = UUID()
+    var title: String
+    var image: String
+    var color: Color
+    var shadowColor: Color
+}
+
+let CourseData = [
+    Course(title: "Number One",
+           image: "community_banner_snap",
+           color: Color.blue,
+           shadowColor: Color.gray),
+    Course(title: "Number Two",
+           image: "community_banner_snap",
+           color: Color.pink,
+           shadowColor: Color.gray),
+    Course(title: "Number Three",
+           image: "community_banner_snap",
+           color: Color.purple,
+           shadowColor: Color.gray)
+]
