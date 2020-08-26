@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A5B07FF24F650C50026763A /* UpdateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B07FE24F650C50026763A /* UpdateList.swift */; };
 		4A5DF60E24F50FE700C15B87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF60D24F50FE700C15B87 /* AppDelegate.swift */; };
 		4A5DF61024F50FE700C15B87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF60F24F50FE700C15B87 /* SceneDelegate.swift */; };
 		4A5DF61224F50FE700C15B87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF61124F50FE700C15B87 /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A5B07FE24F650C50026763A /* UpdateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateList.swift; sourceTree = "<group>"; };
 		4A5DF60A24F50FE700C15B87 /* DesignCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5DF60D24F50FE700C15B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A5DF60F24F50FE700C15B87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				4A5DF61524F50FE900C15B87 /* Preview Content */,
 				4A5DF62124F510BB00C15B87 /* Home.swift */,
 				4A5DF62324F517D600C15B87 /* HomeList.swift */,
+				4A5B07FE24F650C50026763A /* UpdateList.swift */,
 			);
 			path = DesignCode;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A5DF60E24F50FE700C15B87 /* AppDelegate.swift in Sources */,
+				4A5B07FF24F650C50026763A /* UpdateList.swift in Sources */,
 				4A5DF62424F517D600C15B87 /* HomeList.swift in Sources */,
 				4A5DF61024F50FE700C15B87 /* SceneDelegate.swift in Sources */,
 				4A5DF62224F510BB00C15B87 /* Home.swift in Sources */,

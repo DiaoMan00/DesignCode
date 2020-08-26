@@ -16,6 +16,9 @@ struct Home: View {
     var body: some View {
         ZStack {
             HomeList()
+                .blur(radius: show ? 20 : 0)
+                .scaleEffect(showProfile ? 0.95 : 1)
+                .animation(.default)
             ContentView()
                 .cornerRadius(30)
                 .shadow(radius: 20)
@@ -151,7 +154,7 @@ struct MenuRight: View {
                 }
             }
             Spacer()
-                .padding(.leading, 20)
+            .padding(.leading, 20)
         }
     }
 }

@@ -21,11 +21,12 @@ struct HomeList: View {
                         .fontWeight(.heavy)
                     Text("22 Course")
                         .foregroundColor(.gray)
-                        .padding(.top, 20)
+                        .padding(.top, 10)
+                        .padding(.bottom, 40)
                 }
-                .padding(.leading, 36)
                 Spacer()
             }
+            .padding(.leading, 70.0)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 30) {
@@ -45,6 +46,7 @@ struct HomeList: View {
             }
             Spacer()
         }
+        .padding(.top, 80)
     }
 }
 
@@ -67,7 +69,8 @@ struct CourseView: View {
                 .foregroundColor(.white)
                 .font(.title)
                 .fontWeight(.medium)
-                .padding(20)
+                .padding(.leading, 40)
+                .padding(.top, 20)
                 .lineLimit(3)
                 .frame(width: 150)
             Spacer()
