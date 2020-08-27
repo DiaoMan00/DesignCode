@@ -161,5 +161,6 @@ struct CardBottomView: View {
         .cornerRadius(30)
         .shadow(radius: 20)
         .offset(y: 600)
+        
     }
 }
