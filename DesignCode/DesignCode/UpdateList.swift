@@ -10,26 +10,55 @@ import SwiftUI
 
 struct UpdateList: View {
     let updates = UpdateData
+    @ObservedObject var store = UpdateStore(updata: UpdateData)
     
+    func addStore() {
+        let up = Update(title: "newTitle", image: "home_welfare_4", date: "2020-08-28", text: "new_Title")
+        store.update.append(up)
+    }
     var body: some View {
         NavigationView() {
-            NavigationLink(destination: ContentView()) {
-                List(updates) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.title)
-                                .font(.title)
-                                .padding(.bottom, 20)
-                            Text(item.text)
-                                .padding(.bottom, 10)
-                                .lineSpacing(5)
-                            Text(item.date)
-                        }
-                        Image(systemName: item.image)
-                    }
+            VStack {
+                Button(action: {
+                    self.addStore()
+                }) {
+                    Text("Add Store")
+                        .foregroundColor(.blue)
                 }
+                List(store.update) { item in
+                    NavigationLink(destination: UpdateDetail(title: item.title,
+                                                             text: item.text,
+                                                             image: item.image)) {
+                        HStack {
+                            Image(item.image)
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                            
+                            VStack(alignment: .leading) {
+                                Text(item.title)
+                                    .font(.headline)
+                                    .fontWeight(.medium)
+                                    .padding(.bottom, 10)
+                                Text(item.text)
+                                    .font(.subheadline)
+                                    .padding(.bottom, 10)
+                                    .lineSpacing(5)
+                                Text(item.date)
+                                    .font(.caption)
+                                    .foregroundColor(.blue)
+                            }
+                        }
+                    }
+                    .padding(.vertical, 8)
+                }
+                .navigationBarTitle("UpdateList")
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        
+                    }) {
+                        Image(systemName: "wrench.fill")
+            })
             }
-            .navigationBarTitle("UpdateList")
         }
         .foregroundColor(.black)
     }
@@ -50,10 +79,10 @@ struct Update: Identifiable {
     
 }
 
-let UpdateData = [Update(title: "qwe", image: "doc.fill", date: "2020-08-11", text: "To show a modal (iOS 13 style)"),
-                  Update(title: "rey", image: "doc.circle", date: "2020-08-11", text: "You just need a simple sheet with the ability to dismiss itself:"),
-                  Update(title: "asd", image: "doc.on.doc", date: "2020-08-12", text: "You need to access to the ViewController. So you need some helper containers and environment stuff:"),
-                  Update(title: "zxc", image: "calendar", date: "2020-08-13", text: "Then you should use implement this extension:"),
-                  Update(title: "fsd", image: "link.circle.fill", date: "2020-08-14", text: "For iOS 14 and Xcode 12:"),
-                  Update(title: "gfd", image: "link.circle", date: "2020-08-16", text: "Hope this answer can help you all! Comment below about your result."),
-                  Update(title: "tyu", image: "person.circle", date: "2020-08-17", text: "number_Six")]
+let UpdateData = [Update(title: "qwe", image: "cellOne", date: "2020-08-11", text: "To show a modal (iOS 13 style)"),
+                  Update(title: "rey", image: "home_welfare_2", date: "2020-08-11", text: "You just need a simple sheet with the ability to dismiss itself:"),
+                  Update(title: "asd", image: "home_welfare_3", date: "2020-08-12", text: "You need to access to the ViewController. So you need some helper containers and environment stuff:"),
+                  Update(title: "zxc", image: "home_welfare_2", date: "2020-08-13", text: "Then you should use implement this extension:"),
+                  Update(title: "fsd", image: "home_welfare_4", date: "2020-08-14", text: "For iOS 14 and Xcode 12:"),
+                  Update(title: "gfd", image: "home_welfare_5", date: "2020-08-16", text: "Hope this answer can help you all! Comment below about your result."),
+                  Update(title: "tyu", image: "home_welfare_6", date: "2020-08-17", text: "number_Six")]
