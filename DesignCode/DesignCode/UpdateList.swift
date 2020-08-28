@@ -16,6 +16,13 @@ struct UpdateList: View {
         let up = Update(title: "newTitle", image: "home_welfare_4", date: "2020-08-28", text: "new_Title")
         store.update.append(up)
     }
+    func moveItem(star: Int, to: Int) {
+//        store.update.swapAt(star, to)
+//        (store.update[star], store.update[to]) = (store.update[to], store.update[star])
+        let a = store.update[star]
+        store.update[star] = store.update[to]
+        store.update[to] = a
+    }
     var body: some View {
         NavigationView() {
             VStack {
@@ -25,39 +32,43 @@ struct UpdateList: View {
                     Text("Add Store")
                         .foregroundColor(.blue)
                 }
-                List(store.update) { item in
-                    NavigationLink(destination: UpdateDetail(title: item.title,
-                                                             text: item.text,
-                                                             image: item.image)) {
-                        HStack {
-                            Image(item.image)
-                                .resizable()
-                                .frame(width: 80, height: 80)
-                            
-                            VStack(alignment: .leading) {
-                                Text(item.title)
-                                    .font(.headline)
-                                    .fontWeight(.medium)
-                                    .padding(.bottom, 10)
-                                Text(item.text)
-                                    .font(.subheadline)
-                                    .padding(.bottom, 10)
-                                    .lineSpacing(5)
-                                Text(item.date)
-                                    .font(.caption)
-                                    .foregroundColor(.blue)
+                List {
+                    ForEach(store.update) { item in
+                        NavigationLink(destination: UpdateDetail(title: item.title,
+                                                                 text: item.text,
+                                                                 image: item.image)) {
+                            HStack {
+                                Image(item.image)
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                
+                                VStack(alignment: .leading) {
+                                    Text(item.title)
+                                        .font(.headline)
+                                        .fontWeight(.medium)
+                                        .padding(.bottom, 10)
+                                    Text(item.text)
+                                        .font(.subheadline)
+                                        .padding(.bottom, 10)
+                                        .lineSpacing(5)
+                                    Text(item.date)
+                                        .font(.caption)
+                                        .foregroundColor(.blue)
+                                }
                             }
                         }
+                        .padding(.vertical, 8)
+                    }.onDelete { (indexPath) in
+                        self.store.update.remove(at: indexPath.first ?? 0)
                     }
-                    .padding(.vertical, 8)
+                    .onMove { (indexPath, index) in
+                        self.moveItem(star: indexPath.first ?? 0, to: index)
+                    }
                 }
                 .navigationBarTitle("UpdateList")
                 .navigationBarItems(trailing:
-                    Button(action: {
-                        
-                    }) {
-                        Image(systemName: "wrench.fill")
-            })
+                    EditButton()
+                )
             }
         }
         .foregroundColor(.black)
