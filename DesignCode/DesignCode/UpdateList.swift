@@ -17,11 +17,22 @@ struct UpdateList: View {
         store.update.append(up)
     }
     func moveItem(star: Int, to: Int) {
+        ///这些都是交换两个元素
 //        store.update.swapAt(star, to)
 //        (store.update[star], store.update[to]) = (store.update[to], store.update[star])
-        let a = store.update[star]
-        store.update[star] = store.update[to]
-        store.update[to] = a
+        
+//        let a = store.update[star]
+//        store.update[star] = store.update[to]
+//        store.update[to] = a
+        if star > to {
+            store.update.insert(store.update[star], at: to)
+            store.update.remove(at: star + 1)
+            
+        } else {
+            store.update.insert(store.update[star], at: to)
+            store.update.remove(at: star)
+            
+        }
     }
     var body: some View {
         NavigationView() {
@@ -47,10 +58,12 @@ struct UpdateList: View {
                                         .font(.headline)
                                         .fontWeight(.medium)
                                         .padding(.bottom, 10)
+                                        .foregroundColor(.primary)
                                     Text(item.text)
                                         .font(.subheadline)
                                         .padding(.bottom, 10)
                                         .lineSpacing(5)
+                                        .foregroundColor(.primary)
                                     Text(item.date)
                                         .font(.caption)
                                         .foregroundColor(.blue)

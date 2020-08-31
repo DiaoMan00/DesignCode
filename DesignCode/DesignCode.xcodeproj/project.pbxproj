@@ -19,6 +19,7 @@
 		4A5DF62224F510BB00C15B87 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF62124F510BB00C15B87 /* Home.swift */; };
 		4A5DF62424F517D600C15B87 /* HomeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF62324F517D600C15B87 /* HomeList.swift */; };
 		4A5DF62824F63C8B00C15B87 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF62724F63C8B00C15B87 /* BlurView.swift */; };
+		4A682FAA24FC8D5400992D65 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A682FA924FC8D5400992D65 /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4A5DF62124F510BB00C15B87 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		4A5DF62324F517D600C15B87 /* HomeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeList.swift; sourceTree = "<group>"; };
 		4A5DF62724F63C8B00C15B87 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		4A682FA924FC8D5400992D65 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				4A5DF62724F63C8B00C15B87 /* BlurView.swift */,
 				4A5DF60D24F50FE700C15B87 /* AppDelegate.swift */,
 				4A5DF60F24F50FE700C15B87 /* SceneDelegate.swift */,
+				4A682FA924FC8D5400992D65 /* TabBar.swift */,
 				4A5DF61124F50FE700C15B87 /* ContentView.swift */,
 				4A5DF61324F50FE900C15B87 /* Assets.xcassets */,
 				4A5DF61824F50FE900C15B87 /* LaunchScreen.storyboard */,
@@ -173,6 +176,7 @@
 				4A5DF62224F510BB00C15B87 /* Home.swift in Sources */,
 				4A5DF61224F50FE700C15B87 /* ContentView.swift in Sources */,
 				4A5DF62824F63C8B00C15B87 /* BlurView.swift in Sources */,
+				4A682FAA24FC8D5400992D65 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

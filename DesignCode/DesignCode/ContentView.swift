@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            BlurView(stype: .extraLight)
+            BlurView(stype: .systemMaterial)
             
             TitleView()
                 .blur(radius: show ? 20 : 0)
@@ -105,12 +105,12 @@ struct CertificateView: View {
                         .padding(.top)
                     Text("Certificate")
                         .font(.subheadline)
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                 }
                 Spacer()
                 Image(systemName:"folder.fill")
                     .resizable()
-                    .foregroundColor(.white)
+                    .foregroundColor(.primary)
                     .frame(width:30, height: 30)
             }
             .padding(.horizontal)
@@ -118,7 +118,7 @@ struct CertificateView: View {
             Image("community_banner_02")
         }
         .frame(width: 340, height: 220)
-        .background(Color.black)
+        .background(BlurView(stype: .systemThickMaterial))
         .cornerRadius(10)
         .shadow(radius: 20)
     }
@@ -150,14 +150,13 @@ struct CardBottomView: View {
                 .opacity(0.2)
             
             Text("In addition to the standard dynamic type sizes, the system offers a number of even larger sizes for users with accessibility needs. ")
-                .foregroundColor(.black)
                 .font(.subheadline)
             Spacer()
         }
         .frame(minWidth:0 , maxWidth: .infinity)
         .padding()
         .padding(.horizontal)
-        .background(Color.white)
+        .background(BlurView(stype: .systemMaterial))
         .cornerRadius(30)
         .shadow(radius: 20)
         .offset(y: 600)
