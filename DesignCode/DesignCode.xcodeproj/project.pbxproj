@@ -20,6 +20,8 @@
 		4A5DF62424F517D600C15B87 /* HomeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF62324F517D600C15B87 /* HomeList.swift */; };
 		4A5DF62824F63C8B00C15B87 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF62724F63C8B00C15B87 /* BlurView.swift */; };
 		4A682FAA24FC8D5400992D65 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A682FA924FC8D5400992D65 /* TabBar.swift */; };
+		4A682FAC24FCDFDC00992D65 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A682FAB24FCDFDC00992D65 /* Settings.swift */; };
+		4A682FAE24FDDFF800992D65 /* CertificateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A682FAD24FDDFF800992D65 /* CertificateRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		4A5DF62324F517D600C15B87 /* HomeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeList.swift; sourceTree = "<group>"; };
 		4A5DF62724F63C8B00C15B87 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		4A682FA924FC8D5400992D65 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		4A682FAB24FCDFDC00992D65 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		4A682FAD24FDDFF800992D65 /* CertificateRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				4A5B07FE24F650C50026763A /* UpdateList.swift */,
 				4A5A6EF024F8A61D007417D8 /* UpdateDetail.swift */,
 				4A5A6EF424F8B0FC007417D8 /* UpdateStore.swift */,
+				4A682FAB24FCDFDC00992D65 /* Settings.swift */,
+				4A682FAD24FDDFF800992D65 /* CertificateRow.swift */,
 			);
 			path = DesignCode;
 			sourceTree = "<group>";
@@ -176,6 +182,8 @@
 				4A5DF62224F510BB00C15B87 /* Home.swift in Sources */,
 				4A5DF61224F50FE700C15B87 /* ContentView.swift in Sources */,
 				4A5DF62824F63C8B00C15B87 /* BlurView.swift in Sources */,
+				4A682FAC24FCDFDC00992D65 /* Settings.swift in Sources */,
+				4A682FAE24FDDFF800992D65 /* CertificateRow.swift in Sources */,
 				4A682FAA24FC8D5400992D65 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

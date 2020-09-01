@@ -70,7 +70,6 @@ struct ContentView: View {
                             self.show = false
                         })
                 )
-            
         }
     }
 }
@@ -94,11 +93,12 @@ struct CardView: View {
 }
 
 struct CertificateView: View {
+    var item = Certificate(title: "", image: "", width: 0, height: 0)
     var body: some View {
         VStack {
             HStack {
                 VStack(alignment: .leading) {
-                    Text("UI Design")
+                    Text(item.title)
                         .font(.headline)
                         .fontWeight(.medium)
                         .foregroundColor(.blue)
@@ -108,19 +108,21 @@ struct CertificateView: View {
                         .foregroundColor(.primary)
                 }
                 Spacer()
-                Image(systemName:"folder.fill")
+                Image(systemName:item.image)
                     .resizable()
                     .foregroundColor(.primary)
-                    .frame(width:30, height: 30)
+                    .frame(width:CGFloat(item.width), height: CGFloat(item.height))
             }
             .padding(.horizontal)
             Spacer()
             Image("community_banner_02")
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .offset(y: 50)
         }
         .frame(width: 340, height: 220)
         .background(BlurView(stype: .systemThickMaterial))
         .cornerRadius(10)
-        .shadow(radius: 20)
+        .shadow(radius: 10)
     }
 }
 

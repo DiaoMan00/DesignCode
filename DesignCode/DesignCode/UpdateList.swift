@@ -37,12 +37,6 @@ struct UpdateList: View {
     var body: some View {
         NavigationView() {
             VStack {
-                Button(action: {
-                    self.addStore()
-                }) {
-                    Text("Add Store")
-                        .foregroundColor(.blue)
-                }
                 List {
                     ForEach(store.update) { item in
                         NavigationLink(destination: UpdateDetail(title: item.title,
@@ -79,8 +73,13 @@ struct UpdateList: View {
                     }
                 }
                 .navigationBarTitle("UpdateList")
-                .navigationBarItems(trailing:
-                    EditButton()
+                .navigationBarItems(
+                    leading: Button(action: {
+                        self.addStore()
+                    }, label: {
+                            Text("addStore")
+                    }),
+                    trailing: EditButton()
                 )
             }
         }

@@ -31,19 +31,25 @@ struct HomeList: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 30) {
                     ForEach(courses) { item in
-                        CourseView(title: item.title,
-                                   image: item.image,
-                                   color: item.color,
-                                   shadowColor: item.shadowColor)
-                            .sheet(isPresented: self.$show, content: { ContentView() })
-                            .onTapGesture {
-                                self.show.toggle()
+                        GeometryReader {_ in
+                            CourseView(title: item.title,
+                                       image: item.image,
+                                       color: item.color,
+                                       shadowColor: item.shadowColor)
+                                .sheet(isPresented: self.$show, content: { ContentView() })
+                                .onTapGesture {
+                                    self.show.toggle()
+                            }
+                            .rotation3DEffect(Angle(degrees: 0), axis: (x: 10.0, y: 10.0, z: 10.0))
                         }
+                        .frame(width: 246)
                     }
                 }
                 .padding(.leading, 30)
+                .padding(.trailing, 30)
                 .padding(.bottom, 100)
             }
+            CertificateRow()
             Spacer()
         }
         .padding(.top, 80)

@@ -12,26 +12,25 @@ struct TabBar: View {
     var body: some View {
         TabView {
             Home().tabItem {
-                VStack {
-                    Image(systemName: "house.fill")
-                    Text("Home")
-                }
+                Image(systemName: "house.fill")
+                Text("Home")
             }.tag(1)
             ContentView().tabItem {
-                VStack {
-                    Image(systemName: "person.circle")
-                    Text("ContentView")
-                }
+                Image(systemName: "doc.append")
+                Text("ContentView")
             }.tag(2)
             UpdateList().tabItem {
-                VStack {
-                    Image(systemName: "list.dash")
-                    Text("UpdateList")
-                }
-            }.tag(3)
-        }
+                Image(systemName: "person.circle")
+                Text("ContentView")
+            }
+            Settings().tabItem {
+                Image(systemName: "checkmark.seal.fill")
+                Text("Settings")
+            }
+        }.tag(3)
     }
 }
+
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
